@@ -1,0 +1,485 @@
+*{
+	margin: 0;
+	padding: 0;	
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    overflow-x: hidden;
+}
+h1{
+    font-size: 13vh;
+    color: white;
+    padding-top: 11vh;
+    text-align: center;
+    font-weight: normal;
+}
+header{
+    height: 10vh;
+    background-color: black;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    z-index: 100;
+}
+header a{
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+header a:hover{
+    opacity: 0.7;
+    border-bottom: 3px white solid;
+    cursor: pointer;
+}
+.topnav{
+    margin-top: 10px;   
+}
+.topnav a{
+    font-size: 25px;
+}
+#compname{
+    font-size: 35px;
+    margin-right: 20px;
+}
+
+.firstblock{
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://images.wallpaperscraft.ru/image/single/restoran_stoliki_interer_206807_1920x1080.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.firstblock p{
+    font-size: 4vh;
+    color: white;
+    text-align: center;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.carousel{
+    position: relative;
+    height: 50vh;
+    width: 40%;
+    margin: -60vh auto;
+}
+.carousel__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carousel__track-container{
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.carousel__track{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 250ms ease-in;
+}
+.carousel__slide{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+.carousel__button{
+    position: absolute;
+    top: 50%;
+    transform: rotateY(-50%);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+.carousel__button--left{
+    left: -40px;
+}
+.carousel__button--right{
+    right: -40px;
+}
+.carousel__button img{
+    width: 5vh;
+}
+.carousel__nav{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+.carousel__indicator{
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgba(241, 237, 237, 0.372);
+    margin: 0 12px;
+    cursor: pointer;
+}
+.carousel__indicator.current-slide{
+    background: rgba(237, 231, 231, 0.75);
+}
+.is-hidden{
+    display: none;
+}
+
+.orderlook{
+    width: 100%;
+    height: 110vh;
+    background-image: url(https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 70vh;
+}
+.orderlook.blur{
+    filter: blur(1.5rem);
+}
+.order_container{
+    width: 40%;
+    height: 40%;
+    background: rgba(0, 0, 0, 0.85);
+    margin-top: 22%;
+    color: white;
+    position: absolute;
+    margin-left: 30%;
+    text-align: center;
+    padding-top: 20px;
+    transform: translateX(-50%);
+    transition: transform 400ms ease-in;
+}
+.order_container.appear{
+    transform: translateX(0);
+}
+.order_container h2{
+    font-size: 50px;
+    font-weight: normal;
+}
+.order_container h3{
+    font-size: 35px;
+    font-weight: normal;
+}
+.buttons{
+    margin-top: 30px;
+    width: 92%;
+    margin-left: 4%;
+}
+.olbutton{
+    height: 8vh;
+    width: 30%;
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 40px;
+}
+#menu_button{
+    margin-right: 16%;
+    background-color: #E8AB24;
+    border: none;
+}
+#order_button{
+    margin-left: 16%;
+    background: transparent;
+    border: #C82517 solid 2px;
+    color: #C82517;
+}
+.pop-up{
+    width: 36%;
+    height: 82vh;
+    background: rgb(159, 158, 158);
+    margin-left: 32%;
+    margin-top: -100vh;
+    position: absolute;
+    visibility: hidden;
+}
+.pop-up.display{
+    visibility: visible;
+}
+.closeButton{
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 95%;
+    background: black;
+    margin-top: 0.5vh;
+}
+.closeButton img{
+    width: 4vh;
+    height: 4vh;
+    margin-top: -1vh;
+    margin-left: -2vh;
+}
+.closeButton:hover{
+    opacity: 0.2;
+}
+.pop-up h2{
+    height: 14vh;
+    width: 100%;
+    background: black;
+    font-size: 9vh;
+    margin-top: 10px;
+    margin-top: -1vh;
+    color: white;
+    text-align: center;
+    font-weight: normal;
+}
+.submit_text{
+    margin-top: 2vh;
+    width: 60%;
+    margin-left: 20%;
+
+}
+.submit_text input, textarea{
+    width: 100%;
+    margin-top: 0.5vh;
+    border-radius: 1vh;
+    height: 5vh;
+    margin-bottom: 1.5vh;
+    padding-left: 1vh;
+    font-size: 2.5vh;
+    border: none;
+}
+#order{
+    height: 15vh;
+    padding-top: 1vh;
+    border-radius: 2vh;
+}
+.submit_text label{
+    font-size: 2.5vh;
+    margin-left: 0.4vh;
+}
+#submit{
+    width: 40%;
+    margin-left:30%;
+    margin-top: 3vh;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+#submit:hover{
+    opacity: 0.7;
+}
+
+.feedback_look{
+    background-image: url(https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    width: 100%;
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.feedback_look h2{
+    color: white;
+    font-size: 6vh;
+    font-weight: normal;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+.feedback{
+    background: rgba(0, 0, 0, 0.5);
+    margin-top: 3vh;
+    width: 65%;
+    height: 17vh;
+}
+.feedback p{
+    color: white;
+    font-style: italic;
+    font-size: 3vh;
+}
+.feedback img{
+    margin-right: 20px;
+    height: 15vh;
+    width: 15vh;
+    border-radius: 50%;
+    margin-top: 1vh;
+    margin-left: 1vh;
+}
+.feedback_text{
+    margin-top: -13vh;
+}
+.left-text{
+    text-align: left;
+    margin-left: 10%;
+    transform: translateX(-50%);
+    transition: transform 600ms ease-in;
+    padding-left: 1vh;
+}
+.left-text p{
+    margin-left: 19vh;
+}
+.right-text{
+    text-align: right;
+    margin-left: 25%;
+    transform: translateX(50%);
+    transition: transform 600ms ease-in;
+}
+.right-text p{
+    margin-right: 20vh;
+}
+.left-text.appear, .right-text.appear{
+    transform: translateX(0);
+}
+
+
+.menu_look{
+    background-image: url(https://images.pexels.com/photos/4577740/pexels-photo-4577740.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.menuPopup{
+    width: 50%;
+    margin-left: 25%;
+    height: 70vh;
+    text-align: center;
+}
+.menuPopup img{
+    max-height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+#menuOpen.hide{
+    visibility: hidden;
+}
+#headnav.dark, .menu_look.dark{
+    filter: brightness(10%);
+}
+.openedMenu{
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    z-index: 200;
+}
+.openedMenu.display{
+    visibility: visible;
+}
+.carousel#menuCarousel{
+    height: 80vh;
+    margin-top: -90vh;
+    width: 29%;
+}
+#menuImage img{
+    max-height: 100%;
+    object-fit: cover;
+}
+#menuClose{
+    margin-top: -7vh;
+    z-index: 200;
+    margin-left: 97%;
+}
+#menuClose img{
+    height: 6vh;
+    width: 6vh;
+    margin-top: -2vh;
+}
+
+
+.about_us_block{
+    background-image: url(https://images.pexels.com/photos/3298637/pexels-photo-3298637.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    width: 100%;
+    height: 110vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+.about_us_block.blur{
+    filter: blur(1.5rem);
+}
+.about_us_block h2, .contacts_look h2{
+    font-size: 30px;
+    font-weight: lighter;
+    font-style: italic;
+    text-align: center;
+    width: 70%;
+    margin-left: 15%;
+    color: white;
+}
+.cook_container{
+    width: 50%;
+    background: rgba(237, 231, 231, 0.3);
+    margin-top: 4vh;
+    margin-left: 25%;
+    height: 55vh;
+    text-align: center;
+    padding-top: 4vh;
+    border-radius: 13vh;
+}
+.cook_container h3{
+    font-weight: normal;
+    font-size: 4vh;
+}
+.cook_container p{
+    font-size: 3vh;
+    font-weight: lighter;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
+
+}
+.comment_button{
+    height: 10vh;
+    width: 50%;
+    margin-top: 10vh;
+    margin-left: 25%;
+}
+.comment_button button{
+    height: 10vh;
+    width: 27vh;
+    cursor: pointer;
+    background-color: #616161;
+    color: white;
+    text-align: center;
+    font-size: 3vh;
+    font-style: italic;
+    border-radius: 3vh;
+}
+.comment_button button:hover{
+    background-color: #373839;
+}
+.opinionp{
+    font-size: 3vh;
+    padding-left: 2vh;
+    margin-top: 2vh;
+    font-weight: 600;
+}
+.pop-up#aboutUs{
+    height: 70vh;
+    margin-top: -90vh;
+}
+#comments{
+    height: 12vh;
+    border-radius: 1.5vh;
+}
+
+.contacts_look{
+    background-image: url(https://images.pexels.com/photos/248159/pexels-photo-248159.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    height: 123vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+.contacts_look iframe{
+    width: 50%;
+    margin-left: 25%;
+    height: 50vh;
+    margin-top: 5vh;
+}
+.contacts_look h3{
+    text-align: right;
+    font-style: italic;
+    font-size: 4vh;
+    margin-top: 4vh;
+    margin-right: 25%;
+    mask-border: 1vh;
+}
+.contact_info{
+    font-size: 3vh;
+    text-align: right;
+    margin-right: 25%;
+}
+.contact_info a{
+    color: white;
+}
